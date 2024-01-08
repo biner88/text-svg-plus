@@ -11,21 +11,21 @@
 
 [package]
 edition = "2021"
-name = "text-svg"
-version = "0.1.2"
+name = "text-svg-plus"
+version = "0.1.3"
 description = "Render text or glyphs in a font to an SVG path"
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/matthunz/text-svg"
+repository = "https://github.com/biner88/text-svg-plus"
 
 [lib]
-name = "text_svg"
+name = "text_svg_plus"
 
 [dependencies.font-kit]
-version = "0.11.0"
+version = "0.12"
 
 [dependencies.rusttype]
-version = "0.9.3"
+version = "0.9"
 
 [dependencies.svg]
-version = "0.12.1"
+version = "0.14"

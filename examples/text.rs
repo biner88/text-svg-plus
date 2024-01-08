@@ -4,7 +4,7 @@ use font_kit::{
 use rusttype::{Font, Point};
 use std::{fs::File, io::Read};
 use svg::{node::element::Rectangle, Document};
-use text_svg::Text;
+use text_svg_plus::Text;
 
 fn main() {
     let handle = SystemSource::new()
@@ -43,6 +43,5 @@ fn main() {
                 .set("height", text.bounding_box.max.y + y),
         )
         .add(text.path);
-
     svg::save("image.svg", &document).unwrap();
 }

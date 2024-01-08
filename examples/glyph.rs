@@ -4,7 +4,7 @@ use font_kit::{
 use rusttype::Font;
 use std::{fs::File, io::Read};
 use svg::Document;
-use text_svg::Glpyh;
+use text_svg_plus::Glpyh;
 
 fn main() {
     let handle = SystemSource::new()

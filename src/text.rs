@@ -3,12 +3,17 @@ use svg::node::element::Path;
 
 pub struct Text {
     pub path: Path,
+    pub data: String,
     pub bounding_box: Rect<f32>,
 }
 
 impl Text {
-    pub fn new(path: Path, bounding_box: Rect<f32>) -> Self {
-        Self { path, bounding_box }
+    pub fn new(path: Path, bounding_box: Rect<f32>, data: String) -> Self {
+        Self {
+            path,
+            bounding_box,
+            data,
+        }
     }
 
     pub fn builder() -> Builder<'static> {
@@ -39,7 +44,6 @@ impl Builder<'_> {
         self.size = size;
         self
     }
-
     pub fn start(mut self, start: Point<f32>) -> Self {
         self.start = start;
         self
@@ -80,6 +84,10 @@ impl Builder<'_> {
                 y: glyphs_height,
             },
         };
-        Text::new(Path::new().set("d", d).set("fill", "#000"), bounding_box)
+        Text::new(
+            Path::new().set("d", d.clone()).set("fill", "#000"),
+            bounding_box,
+            d.clone(),
+        )
     }
 }
